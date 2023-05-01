@@ -5,6 +5,9 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import './Slider.css'
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+
 
 const Slider = ({ categories }) => {
     const [focusedCategory, setFocusedCategory] = useState({});
@@ -19,10 +22,10 @@ const Slider = ({ categories }) => {
     };
     return (
         <div className='overflow-hidden grid grid-cols-2 gap-8'>
-            <div className=''>
-                <h1>{focusedCategory?.place_name}</h1>
-                <p>{focusedCategory?.place_description}</p>
-                <button>Book</button>
+            <div className=' mt-10'>
+                <h1 className='text-7xl text-white font-semibold uppercase'>{focusedCategory?.place_name}</h1>
+                <p className='pr-[50%] mt-5 text-white'>{focusedCategory?.place_description}</p>
+                <Link to={`/category/${focusedCategory?.id}`}><button className='btn btn-primary px-10 py-3 text-white mt-5'>Book <FaArrowRight className='ml-3'></FaArrowRight></button></Link>
             </div>
             <div className=''>
                 <Swiper
@@ -46,7 +49,7 @@ const Slider = ({ categories }) => {
                         <SwiperSlide key={category.id}>
                             <div className='relative'>
                                 <img className='w-full h-full' src={category.img_url} />
-                                <div className="absolute inset-0 bg-[#000] bg-opacity-50 rounded-[10px] flex justify-center items-center">
+                                <div className="absolute inset-0 scale-[98.5%] bg-[#000] bg-opacity-50 rounded-[10px] flex justify-center items-center">
                                     <h1 className='text-5xl font-bold text-white'>{category.place_name}</h1>
                                 </div>
                             </div>

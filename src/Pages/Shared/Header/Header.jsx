@@ -39,7 +39,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="">
-                    <Link className="btn btn-primary text-white">Login</Link>
+                    <Link className="btn btn-primary px-10 py-3 text-white">Login</Link>
                 </div>
                </div>
             </div>

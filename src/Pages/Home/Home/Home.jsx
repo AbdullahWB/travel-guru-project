@@ -9,8 +9,8 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setCategory(data))
             .catch(error => console.log(error))
-    }, [])
-    console.log(categories);
+    }, [categories])
+    console.log();
     return (
         <div className='w-[100%] mt-[150px]'>
            <Slider categories={categories} />
